@@ -1,15 +1,11 @@
-// var cronJob = require('cron').CronJob;
+var cron = require('cron').CronJob;
 
-// module.exports = function(robot) {
-//   var cronOmikujiByHarada;
-//   cronOmikujiByHarada = new cronJob('* */2 * * * 1,2,3,4,5', (function(_this) {
-//     return function() {
-//       var envelope;
-//       envelope = {
-//         room: "#random"
-//       };
-//       return robot.send(envelope, "原田さんおみくじ");
-//     };
-//   })(this));
-//   return cronOmikujiByHarada.start();
-// };
+module.exports = function(robot) {
+  return new cron('0 */2 * * * 1-5', (function(_this) {
+    return function() {
+      return robot.send({
+        room: "rails-project01"
+      }, "原田さんおみくじ");
+    };
+  })(this), null, true, "Asia/Tokyo");
+};
