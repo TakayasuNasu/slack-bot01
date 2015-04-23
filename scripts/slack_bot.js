@@ -3,7 +3,7 @@ module.exports = function(robot) {
     return res.send("オマエモナー");
   });
 
-  robot.hear(/澤野|原田|吉田/i, function(msg) {
+  robot.hear(/大吉|凶/i, function(msg) {
     return msg.send("```\n   Λ＿Λ     ＼＼\n（  ・∀・）  | | ｶﾞｯ\n と     ）  | |\n  Ｙ /ノ     人\n   / ）    < >   _Λ  ∩\n＿/し'   ／／  Ｖ｀Д´）/\n（＿フ彡             / ←>> @" + msg.message.user.name + "\n```");
   });
 };
