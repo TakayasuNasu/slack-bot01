@@ -14,6 +14,10 @@ module.exports = function(robot) {
     return res.send(item + res.random(massages));
   });
 
+  robot.respond(/hogehoge/i, function(res) {
+    return res.send("原田さんおみくじ");
+  });
+
   robot.hear(/死ね/i, function(res) {
     return res.send("オマエモナー");
   });
