@@ -1,5 +1,19 @@
 
 module.exports = function(robot) {
+
+  robot.hear(/select (.+)/i, function(res) {
+    var items    = res.match[1].split(/[　・,、\s]+/);
+    var item     = res.random(items);
+    var massages = [
+      "で :thumbsup: ",
+      "です :point_up: ",
+      "じゃね :question:  ",
+      "っす :clap: ",
+      "がいいと思います  :pray: "
+    ];
+    return res.send(item + res.random(massages));
+  });
+
   robot.hear(/死ね/i, function(res) {
     return res.send("オマエモナー");
   });
@@ -17,7 +31,7 @@ module.exports = function(robot) {
   });
 
   robot.respond(/今日の運勢/i, function(res) {
-    luck = [
+    var luck = [
     ':harachev: < 大吉。俺の給料は45万だけど',
     ':harachev: < 中吉。死ね',
     ':harachev: < 吉。レベル低いね',
