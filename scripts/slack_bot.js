@@ -27,7 +27,7 @@ module.exports = function(robot) {
   });
 
   robot.hear(/凶/i, function(msg) {
-    return msg.send("```\n  Λ＿Λ     ＼＼\n（  ・∀・）  | | ｶﾞｯ\n と     ）  | |\n  Ｙ /ノ     人\n   / ）    < >   _Λ  ∩\n＿/し'   ／／  Ｖ｀Д´）/\n（＿フ彡             / ←>> @" + msg.message.user.name + "\n```");
+    return msg.send("```\n   Λ＿Λ     ＼＼\n （  ・∀・）  | | ｶﾞｯ\n と     ）  | |\n  Ｙ /ノ     人\n   / ）    < >   _Λ  ∩\n＿/し'   ／／  Ｖ｀Д´）/\n（＿フ彡             / ←>> @" + msg.message.user.name + "\n```");
   });
 
   robot.respond(/今日の運勢/i, function(res) {
