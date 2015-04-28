@@ -19,7 +19,7 @@ module.exports = function(robot) {
           }
 
           strings = [];
-          strings.push("Here's the latest news headlines:\n");
+          strings.push("おはようございます。吉田ニュースの時間です \n");
           var _ref = response.responseData.results;
 
           for (var _i = 0, _len = _ref.length; _i < _len; _i++) {
