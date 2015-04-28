@@ -1,8 +1,8 @@
 
 module.exports = function(robot) {
 
-  robot.respond(/(.*どれにする\?|.*どれがいい\?|.*何にする\?|.*何がいい\?)(.+)/i, function(res) {
-    var items    = res.match[2].split(/[　・,、\s]+/);
+  robot.respond(/.*(いつ|何時|どこ|どれ|だれ|誰|なに|何)(に|が)(する|いい|いいっすか|いいと思います|します)\?(.+)/i, function(res) {
+    var items    = res.match[4].split(/[　・,、\s]+/);
     var item     = res.random(items);
     var massages = [
       "で :thumbsup: ",
