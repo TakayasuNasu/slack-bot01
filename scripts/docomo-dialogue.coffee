@@ -1,7 +1,7 @@
 module.exports = (robot) ->
   status  = {}
 
-  robot.respond /(?:雑談\s+|(?:(?:(様|さま|サマ|殿|どの|さん|サン|はん|どん|やん|ちゃん|チャン|氏|君|くん|クン|たん|タン|先生|せんせ(?:い|ー))(?:、|。|!|！)?))|(?:(?:、|。|!|！)\s*))(.*)/, (res) ->
+  robot.respond /(?:雑談\s+|(?:(?:(様|さま|サマ|殿|どの|さん|サン|はん|どん|やん|ちゃん|チャン|氏|君|くん|クン|たん|タン|社長|しゃちょう|先生|せんせ(?:い|ー))(?:、|。|!|！)?))|(?:(?:、|。|!|！)\s*))(.*)/, (res) ->
     message = res.match[2]
     return if message is ''
 
@@ -39,7 +39,10 @@ module.exports = (robot) ->
       })) (err, response, body) ->
         if err?
           console.log "Encountered an error #{err}"
+        else if body is ''
+          res.send "へんじがない。ただのしかばねのようだ"
         else
+          console.log body
           res.send JSON.parse(body).utt
           status =
             "time": now
