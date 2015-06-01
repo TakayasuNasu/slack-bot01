@@ -4,7 +4,7 @@ module.exports = function(robot) {
   return new cron('10 10 10 * * 1-5', (function(_this) {
 
     return function() {
-      robot.http("https://ajax.googleapis.com/ajax/services/search/news?v=1.0&rsz=3&topic=h&ned=jp")
+      robot.http("https://ajax.googleapis.com/ajax/services/search/news?v=1.0&rsz=3&topic=t&ned=jp")
         .get()(function(err, res, body) {
           var response;
           try {

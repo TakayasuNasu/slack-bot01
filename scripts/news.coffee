@@ -25,7 +25,7 @@ module.exports = (robot) ->
         .get() (err, res, body) ->
           complete cb, body, err
     else
-      msg.http("https://ajax.googleapis.com/ajax/services/search/news?v=1.0&rsz=3&topic=h&ned=jp")
+      msg.http("https://ajax.googleapis.com/ajax/services/search/news?v=1.0&rsz=3&topic=t&ned=jp")
         .get() (err, res, body) ->
           complete cb, body, err
 
